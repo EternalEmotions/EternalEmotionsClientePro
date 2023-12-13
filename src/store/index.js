@@ -202,7 +202,7 @@ updateReservas(state, updateReservas) {
   
     // Fetch de Usuarios
     fetchUsuarios({ commit }) {
-      fetch('https://localhost:7043/Usuarios')
+      fetch('https://eternalemotionspre.azurewebsites.net/Usuarios')
         .then(response => response.json())
         .then(data => {
           console.log('Datos recibidos de la API:', data);
@@ -214,7 +214,7 @@ updateReservas(state, updateReservas) {
     },
  // Post de Usuarios
  addUsuarios({ commit }, usuariosañadidos) {
-  fetch('https://localhost:7043/Usuarios', {
+  fetch('https://eternalemotionspre.azurewebsites.net/Usuarios', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -229,7 +229,7 @@ updateReservas(state, updateReservas) {
  
 },
 updateUsuarios({ commit }, Usuarios) {
-  fetch(`https://localhost:7043/Usuarios/${Usuarios.id}`, {
+  fetch(`https://eternalemotionspre.azurewebsites.net/Usuarios/${Usuarios.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -264,7 +264,7 @@ updateUsuarios({ commit }, Usuarios) {
 
 
 deleteUsuarios({ commit }, id) {
-   fetch('https://localhost:7043/Usuarios' + `/${id}`, {
+   fetch('https://eternalemotionspre.azurewebsites.net/Usuarios' + `/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -284,7 +284,7 @@ deleteUsuarios({ commit }, id) {
     });
 },
 usuariosSocios({ commit }) {
-  fetch(`https://localhost:7043/Usuarios/socios?esSocio=${true}`)
+  fetch(`https://eternalemotionspre.azurewebsites.net/Usuarios/socios?esSocio=${true}`)
     .then((result) => result.json())
     .then((data) => {
       console.log('Usuarios Socios:', data);
@@ -295,7 +295,7 @@ usuariosSocios({ commit }) {
     });
 },
 usuariosSociosFalse({ commit }) {
-  fetch(`https://localhost:7043/Usuarios/socios?esSocio=${false}`)
+  fetch(`https://eternalemotionspre.azurewebsites.net/Usuarios/socios?esSocio=${false}`)
     .then((result) => result.json())
     .then((data) => {
       console.log('Usuarios No Socios:', data);
@@ -306,7 +306,7 @@ usuariosSociosFalse({ commit }) {
     });
 },
 fetchUsuariosName({ commit }, name) {
-  fetch(`https://localhost:7043/Usuarios/GetByName?name=${name}`)
+  fetch(`https://eternalemotionspre.azurewebsites.net/Usuarios/GetByName?name=${name}`)
     .then(result => result.json())
     .then(data => {
       console.log('Usuarios name:', data);
@@ -319,7 +319,7 @@ fetchUsuariosName({ commit }, name) {
 
     // Fetch de Likes
     addLikes({ commit }, likeInfo) {
-      fetch('https://localhost:7043/Likes', {
+      fetch('https://eternalemotionspre.azurewebsites.net/Likes', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
@@ -334,13 +334,13 @@ fetchUsuariosName({ commit }, name) {
 
     //Testimonios 
     fetchTestimonios({ commit }) {
-      fetch('https://localhost:7043/Testimonios')
+      fetch('https://eternalemotionspre.azurewebsites.net/Testimonios')
         .then(result => result.json())
         .then(data => commit('setTestimonios', data));
     },
     // Post de Testimonios
     addTestimonios({ commit }, testimoniosInfo) {
-      fetch('https://localhost:7043/Testimonios', {
+      fetch('https://eternalemotionspre.azurewebsites.net/Testimonios', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
@@ -352,7 +352,7 @@ fetchUsuariosName({ commit }, name) {
     },
     // Delete de Testimonios
     deleteTestimonios({ commit }, id) {
-      fetch('https://localhost:7043/Testimonios' + `/${id}`, {
+      fetch('https://eternalemotionspre.azurewebsites.net/Testimonios' + `/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -367,7 +367,7 @@ fetchUsuariosName({ commit }, name) {
 
     },
     searchTestimonios({ commit }, datePost) {
-      fetch('https://localhost:7043/Testimonios/fecha?datePost=' + `${datePost}`)
+      fetch('https://eternalemotionspre.azurewebsites.net/Testimonios/fecha?datePost=' + `${datePost}`)
 
 
         .then(result => result.json())
@@ -382,13 +382,13 @@ fetchUsuariosName({ commit }, name) {
 
     fetchPresets({ commit }) {
       console.log('Fetching Presets...');
-      fetch('https://localhost:7043/Presets')
+      fetch('https://eternalemotionspre.azurewebsites.net/Presets')
         .then(result => result.json())
         .then(data => commit('setPresets', data));
     },
     // Post de Presets
     addPresets({ commit }, presetsInfo) {
-      fetch('https://localhost:7043/Presets', {
+      fetch('https://eternalemotionspre.azurewebsites.net/Presets', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
@@ -400,7 +400,7 @@ fetchUsuariosName({ commit }, name) {
     },
     
     deletePresets({ commit }, id) {
-      return fetch('https://localhost:7043/Presets' + `/${id}`, {
+      return fetch('https://eternalemotionspre.azurewebsites.net/Presets' + `/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -422,7 +422,7 @@ fetchUsuariosName({ commit }, name) {
     
     
     presetPrecioDesc({ commit }) {
-      return fetch(`https://localhost:7043/Presets/precio?sortOrder=desc`)
+      return fetch(`https://eternalemotionspre.azurewebsites.net/Presets/precio?sortOrder=desc`)
         .then((result) => result.json())
         .then((data) => {
           console.log('Presets after sorting:', data);
@@ -434,7 +434,7 @@ fetchUsuariosName({ commit }, name) {
     },
     
     presetPrecioAsc({ commit }) {
-      return fetch(`https://localhost:7043/Presets/precio?sortOrder=asc`)
+      return fetch(`https://eternalemotionspre.azurewebsites.net/Presets/precio?sortOrder=asc`)
         .then((result) => result.json())
         .then((data) => {
           console.log('Presets after sorting:', data);
@@ -446,7 +446,7 @@ fetchUsuariosName({ commit }, name) {
     },
     
     updatePreset({ commit }, Presets) {
-      fetch(`https://localhost:7043/Presets/${Presets.id}`, {
+      fetch(`https://eternalemotionspre.azurewebsites.net/Presets/${Presets.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -482,13 +482,13 @@ fetchUsuariosName({ commit }, name) {
 
 fetchOrders({ commit }) {
   console.log('Fetching Orders...');
-  fetch('https://localhost:7043/Order')
+  fetch('https://eternalemotionspre.azurewebsites.net/Order')
     .then(result => result.json())
     .then(data => commit('setOrders', data));
 },
 // Post de Orders
 addOrders({ commit }, ordersInfo) {
-  fetch('https://localhost:7043/Order', {
+  fetch('https://eternalemotionspre.azurewebsites.net/Order', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
@@ -505,7 +505,7 @@ addOrders({ commit }, ordersInfo) {
     .catch(error => console.error("Error al realizar la compra:", error));
 },
 deleteOrders({ commit, dispatch }, id) {
-  fetch('https://localhost:7043/Order' + `/${id}`, {
+  fetch('https://eternalemotionspre.azurewebsites.net/Order' + `/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -537,7 +537,7 @@ deleteOrders({ commit, dispatch }, id) {
 
 ordersTotal({ commit }) {
   console.log('Fetching Orders...');
-  fetch('https://localhost:7043/Order/sum')
+  fetch('https://eternalemotionspre.azurewebsites.net/Order/sum')
   .then(response => {
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -553,13 +553,13 @@ ordersTotal({ commit }) {
 
 fetchPagos({ commit }) {
   console.log('Fetching pagos...');
-  fetch('https://localhost:7043/Pagos')
+  fetch('https://eternalemotionspre.azurewebsites.net/Pagos')
     .then(result => result.json())
     .then(data => commit('setPagos', data));
 },
 
 pagosTotal({ commit }, pagosTotal) {
-  fetch('https://localhost:7043/Pagos', {
+  fetch('https://eternalemotionspre.azurewebsites.net/Pagos', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -575,7 +575,7 @@ pagosTotal({ commit }, pagosTotal) {
 },
 
 fetchEventos({ commit }) {
-  fetch('https://localhost:7043/Eventos')
+  fetch('https://eternalemotionspre.azurewebsites.net/Eventos')
     .then(response => response.json())
     .then(data => {
       console.log('Datos recibidos de la API:', data);
@@ -587,7 +587,7 @@ fetchEventos({ commit }) {
 },
 // Post de Eventos
 addEventos({ commit }, eventosañadidos) {
-fetch('https://localhost:7043/Eventos', {
+fetch('https://eternalemotionspre.azurewebsites.net/Eventos', {
 method: 'POST',
 headers: {
   'Content-Type': 'application/json',
@@ -603,7 +603,7 @@ commit('addEventos', data);
 },
 
 deleteEventos({ commit, dispatch }, id) {
-  fetch('https://localhost:7043/Eventos' + `/${id}`, {
+  fetch('https://eternalemotionspre.azurewebsites.net/Eventos' + `/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -630,7 +630,7 @@ deleteEventos({ commit, dispatch }, id) {
 
 },
 updateEventos({ commit }, Eventos) {
-  fetch(`https://localhost:7043/Eventos/${Eventos.id}`, {
+  fetch(`https://eternalemotionspre.azurewebsites.net/Eventos/${Eventos.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -663,7 +663,7 @@ updateEventos({ commit }, Eventos) {
 
 
 fetchReservas({ commit }) {
-  fetch('https://localhost:7043/Reservas')
+  fetch('https://eternalemotionspre.azurewebsites.net/Reservas')
     .then(response => response.json())
     .then(data => {
       console.log('Datos recibidos de la API:', data);
@@ -675,7 +675,7 @@ fetchReservas({ commit }) {
 },
 // Post de Reservas
 addReservas({ commit }, nuevaReserva) {
-  return fetch('https://localhost:7043/Reservas', {
+  return fetch('https://eternalemotionspre.azurewebsites.net/Reservas', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
@@ -701,7 +701,7 @@ addReservas({ commit }, nuevaReserva) {
 // En tu archivo de vuex, en la sección de actions
 fetchReservasId({ commit }, { eventoId, fecha }) {
   return new Promise((resolve, reject) => {
-    fetch(`https://localhost:7043/Reservas/${eventoId}/${fecha}`)
+    fetch(`https://eternalemotionspre.azurewebsites.net/Reservas/${eventoId}/${fecha}`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`Error al obtener las reservas para el evento ${eventoId} y la fecha ${fecha}`);
@@ -723,7 +723,7 @@ fetchReservasId({ commit }, { eventoId, fecha }) {
 },
 
 updateReservas({ commit }, Reservas) {
-  fetch(`https://localhost:7043/Reservas/${Reservas.id}`, {
+  fetch(`https://eternalemotionspre.azurewebsites.net/Reservas/${Reservas.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
