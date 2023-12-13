@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'EternalEmotionsProCliente'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_62E869E3E7624A36B7E44DA27D8F7392 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_08E211118A3F435D9A8E16E870B91007 }}
           package: .
